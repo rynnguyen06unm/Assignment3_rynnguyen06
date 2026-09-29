@@ -7,7 +7,3 @@ struct _my_array
 
 typedef struct _my_array Array;
 
-void output_array(Array *a);
-void shift_array(Array *a);
-Array *average_adjacent(Array *a);
-
