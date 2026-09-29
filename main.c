@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "array.h"
 
+// prints all array values 
 void outputarray(Array *array)
 {
     for (int i = 0; i < array->size; i++)
@@ -11,6 +12,7 @@ void outputarray(Array *array)
     printf("\n");
 }
 
+// moves all the values left and first value to end, and makes a new array
 void shiftarray(Array *array)
 {
     double temp = array->data[0];
@@ -43,6 +45,7 @@ int main(int arcount, char *arvector[])
         return 1;
     }
 
+// converts string inputs to int, with a check
     int convertinput;
     sscanf(arvector[1], "%d", &convertinput);
 
@@ -52,6 +55,7 @@ int main(int arcount, char *arvector[])
         return 1;
     }
 
+// allocate array mem, and fills array with input
     Array *array = malloc(sizeof(Array));
 
     array->size = convertinput;
@@ -69,6 +73,7 @@ int main(int arcount, char *arvector[])
     Array *averagedarray = averageadjacent(array);
     outputarray(averagedarray);
 
+// free all dedicated mem
     free(array->data);
     free(array);
 
